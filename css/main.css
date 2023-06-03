@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+body {
+  min-height: 100vh;
+  background-color: darkcyan;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+/* Start App */
+main {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(5, 0, 0, 0.678);
+  padding: 15px;
+  border-radius: 8px;
+}
+@media (max-width: 991px) {
+  main {
+    flex-direction: column;
+    align-items: unset;
+    gap: 20px;
+    width: 100%;
+  }
+}
+.upload-img {
+  flex: 1.3;
+  text-align: center;
+  padding: 0 40px;
+}
+@media (max-width: 991px) {
+  .upload-img {
+    padding: 0;
+  }
+}
+.upload-area {
+  height: 370px;
+  border-radius: 8px;
+  border: 2px dashed white;
+  margin-bottom: 20px;
+  position: relative;
+  transition: 0.3s;
+}
+.closeImageBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  transition: 0.3s;
+  display: none;
+  color: #fff;
+}
+.upload-area.image-uploaded .closeImageBtn {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+}
+.upload-area.image-uploaded:hover .closeImageBtn {
+  opacity: 1;
+  visibility: visible;
+}
+.closeImageBtn:hover {
+  color: red;
+}
+.upload-area:hover .uploadicon {
+  color: rgb(10, 10, 224);
+}
+.upload-area.dragenter {
+  /* toggled via js */
+  border: none;
+  background: #9e9e9e;
+}
+.upload-area.image-uploaded {
+  /* toggled via js */
+  border: none;
+  background: transparent;
+}
+.upload-area.image-uploaded.dragenter .canvasImg {
+  /* toggled via js */
+  opacity: 0.5;
+}
+.upload-instructions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+.upload-area.dragenter .upload-instructions {
+  /* toggled via js */
+  visibility: hidden;
+  opacity: 0;
+}
+.upload-area.image-uploaded .upload-instructions {
+  /* toggled via js */
+  display: none;
+}
+.upload-instructions .uploadicon {
+  margin-bottom: 10px;
+  color: blue;
+  transition: 0.3s;
+}
+.upload-instructions .text {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.5;
+  user-select: none;
+  color: #fff;
+}
+.upload-area img,
+.upload-area .canvasImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+/* .upload-area.image-uploaded img, */
+.upload-area.image-uploaded .canvasImg {
+  display: block;
+}
+.uploadFileBtn {
+  border: 1px dashed #fff;
+  background-color: transparent;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 17px;
+  transition: 0.3s;
+}
+.upload-area.image-uploaded + .uploadFileBtn {
+  display: none;
+}
+.uploadFileBtn:hover {
+  background-color: green;
+  color: #000;
+}
+.filters-content {
+  flex: 1;
+}
+/* .filters-list {
+} */
+.filter-item {
+  display: block;
+  margin-bottom: 20px;
+}
+.filter-item .filter-title {
+  text-align: right;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.filter-item .filter-range {
+  width: 100%;
+}
+.filters-content .actions {
+  /* display: flex; */
+  justify-content: space-around;
+  display: none;
+}
+.filters-content .actions .action-btn {
+  background-color: crimson;
+  color: #fff;
+  transition: 0.3s;
+  padding: 8px 15px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.filters-content .actions .action-btn:hover {
+  color: #000;
+  background-color: darkorange;
+}
+/* End App */

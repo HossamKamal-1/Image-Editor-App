@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Editor</title>
+  <!-- Font Awesome Library CSS File -->
+  <link rel="stylesheet" href="css/all.min.css" />
+  <!-- Main CSS File -->
+  <link rel="stylesheet" href="css/main.css" />
+  <!-- Main Js File -->
+  <script src="js/main.js" type="module" defer></script>
+</head>
+
+<body>
+  <main>
+    <div class="upload-img">
+      <div class="upload-area" id="dropZone">
+        <button type="button" class="closeImageBtn">
+          <i class="fa-solid fa-circle-xmark fa-2x"></i>
+        </button>
+        <div class="upload-instructions">
+          <i class="fa-solid fa-cloud-arrow-up fa-4x uploadicon"></i>
+          <p class="text">
+            Upload an image with max size of 4mb using upload button to apply filters on it or drag img in this area
+          </p>
+        </div>
+        <img src="" alt="" id="userImage" draggable="false" />
+        <canvas class="canvasImg" draggable="false"></canvas>
+      </div>
+      <button type="button" class="uploadFileBtn">Upload</button>
+      <input type="file" id="defaultInputFile" hidden accept="image/*" />
+    </div>
+    <div class="filters-content">
+      <ul class="filters-list">
+        <li class="filter-item">
+          <h3 class="filter-title">Saturate</h3>
+          <input type="range" class="filter-range" id="saturateControl" value="100" min="0" max="1000" dir="rtl"
+            disabled />
+        </li>
+        <li class="filter-item">
+          <h3 class="filter-title">Contrast</h3>
+          <input type="range" class="filter-range" id="contrastControl" value="100" min="0" max="100" dir="rtl"
+            disabled />
+        </li>
+        <li class="filter-item">
+          <h3 class="filter-title">Brightness</h3>
+          <input type="range" class="filter-range" id="brightnessControl" value="100" min="0" max="1000" dir="rtl"
+            disabled />
+        </li>
+        <li class="filter-item">
+          <h3 class="filter-title">Sepia</h3>
+          <input type="range" class="filter-range" id="sepiaControl" value="0" min="0" max="100" dir="rtl" disabled />
+        </li>
+        <li class="filter-item">
+          <h3 class="filter-title">Grayscale</h3>
+          <input type="range" class="filter-range" id="grayscaleControl" value="0" min="0" max="100" dir="rtl"
+            disabled />
+        </li>
+        <li class="filter-item">
+          <h3 class="filter-title">Blur</h3>
+          <input type="range" class="filter-range" id="blurControl" value="0" min="0" max="4" dir="rtl" disabled />
+        </li>
+        <li class="filter-item">
+          <h3 class="filter-title">Hue Rotate</h3>
+          <input type="range" class="filter-range" id="hueControl" value="0" min="0" max="360" dir="rtl" disabled />
+        </li>
+      </ul>
+      <div class="actions">
+        <button type="reset" class="reset-filter-btn action-btn">Reset</button>
+        <a href="#" download="img" class="download-filered-img-btn action-btn">Download</a>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
